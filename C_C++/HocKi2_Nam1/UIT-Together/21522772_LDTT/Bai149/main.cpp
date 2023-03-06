@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int a, b, UCLN;
+	cout << "nhap lan luot a,b: ";
+	cin >> a >> b;
+	int tempA = a;
+	int tempB = b;
+	while (tempA != tempB)
+	{
+		if (tempA > tempB)
+			tempA = tempA - tempB;
+		else
+			tempB = tempB - tempA;
+	}
+	UCLN = tempA;
+	cout << UCLN;
+	return 0;
+}

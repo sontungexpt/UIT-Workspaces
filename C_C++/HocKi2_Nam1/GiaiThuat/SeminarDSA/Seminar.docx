@@ -1,0 +1,55 @@
+Một số thuật toán chia để trị có thể kể đến như quick-sort, merge-sort, binary searching,...
+
+1) QuickSort
+
+- Đây là một thuật toán được phát triển bởi Sir Charles Antony Richard Hoare là một nhà khoa học máy tính người Anh, có lẽ nổi tiếng nhất vì đã phát triển giải thuật Quicksort, một trong những giải thuật sắp xếp được sử dụng nhiều nhất thế giới, vào năm 1960
+
+- Thuật toán:
++ Chia mảng ban đầu ra nhiều mảng nhỏ hơn
++ Lần lượt sắp xếp các phần tử trong mảng bằng cách so sánh nó với một phần tử chốt (pivot) 
+
+_ Có các cách chọn phần tử chốt như sau:
+. Chọn phần tử đứng đầu hoặc đứng cuối làm phần tử chốt.
+. Chọn phần tử đứng giữa danh sách làm phần tử chốt.
+. Chọn phần tử trung vị trong 3 phần tử đứng đầu, đứng giữa và đứng cuối làm phần tử chốt.
+. Chọn phần tử ngẫu nhiên làm phần tử chốt. (Cách này có thể dẫn đến khả năng rơi vào các trường hợp đặc biệt)
+
+_ Kỹ thuật chọn phần tử chốt ảnh hưởng khá nhiều đến tốc độ của thuật toán
++ Nếu chọn được đúng phần tử trung vị thuật toán sẽ có độ phức tạp O(nlog(n))
++ Nếu không may chọn trúng phần tử đặc biệt thuật toán sẽ có độ phức tạp O(n^2)
+Việc chọn phần tử trung vị tốt thường rất khó và tốn nhiều tài nguyên nên thông thường người ta thường chọn phần tử chính giữa hoặc random với hy vọng may mắn chọn trúng phần tử trung vị
+
+
+_ Thuật toán quick sort với pivot ở chính giữa mảng
++ Tuỳ vào mục đích của bạn (sắp xếp mảng tăng dần hay sắp xếp mảng dần) mà bạn đưa các phần tử về vị trí phù hợp
+
+Sắp xếp tăng:
+_So sánh các phần tử với "pivot" nếu phần tử nhỏ hơn đưa về phía sau trước mảng, lớn hơn thì đưa về phía sau mảng
+
+_Mô tả thuật toán
+Đặt i là vị trí đầu mảng, j là vị trí cuối mảng
+
+B1:
+. Nếu (i >= j):
+    Không thực hiện các bước sau
+
+B2:
+    . Nếu giá trị ở i > pivot:
+        .Dừng
+    . Ngược lại:
+        .Tăng i thêm 1 đơn vị và quay lại B1
+
+B3: 
+    . Nếu giá trị ở i < pivot:
+        .Dừng
+    . Ngược lại:
+        .Tăng i thêm 1 đơn vị và quay lại B1
+
+B4:
+. Đổi chỗ giá trị tại vị trí i và vị trí j, quay lại bước 1
+
+
+Sắp xếp giảm
+_So sánh các phần tử với "pivot" nếu phần tử nhỏ hơn đưa về phía sau mảng, lớn hơn thì đưa về phía trước mảng
+
+Thuật toán giống với sắp xếp giảm chỉ thay đổi các giấu lớn hoặc bé tại bước 2 và 3

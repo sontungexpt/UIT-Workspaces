@@ -1,0 +1,41 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+#include <cctype>
+#include <math.h>
+
+using namespace std;
+
+#define MAXR 500
+#define MAXC 500
+
+//initalize function
+string GetFileLink(string);
+
+int main()
+{
+	int row = 0;
+	int col = 0;
+	KieuDuLieu a[MAXR][MAXC];
+}
+
+//function
+string GetFileLink(string dataTypeOfFile)
+{
+	//lấy tên thư mục
+	string folderName = dataTypeOfFile;
+	folderName[0] = toupper(folderName[0]);
+	folderName += "MatranData";
+	//lấy đường dẫn tới file data.inp
+	string fileLink = "../" + folderName + "/" + dataTypeOfFile + "matrandata";
+	int fileIndex;
+	cout << "Nhap so thu tu cua file can lay gia tri: ";
+	cin >> fileIndex;
+	if (fileIndex < 10)
+		fileLink += '0';
+	fileLink += to_string(fileIndex);
+	string fileLinkInp = fileLink;
+	fileLinkInp += ".inp";
+	return fileLinkInp;
+}
