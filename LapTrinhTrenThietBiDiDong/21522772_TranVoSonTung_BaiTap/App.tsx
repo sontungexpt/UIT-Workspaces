@@ -7,7 +7,6 @@
 
 import React from 'react';
 import { useState } from 'react';
-import type { PropsWithChildren } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -33,8 +32,16 @@ function Login(): JSX.Element {
   return (
     <View style={styles.sectionContainer}>
       <Text style={styles.sectionTitle}>Login</Text>
-      <TextInput onChangeText={newUsername => setUsername(newUsername)} placeholder="Username" style={styles.textInput} />
-      <TextInput onChangeText={newPass => setPassword(newPass)} placeholder="Password" style={styles.textInput} />
+      <TextInput
+        onChangeText={newUsername => setUsername(newUsername)}
+        placeholder="Username"
+        style={styles.textInput}
+      />
+      <TextInput
+        onChangeText={newPass => setPassword(newPass)}
+        placeholder="Password"
+        style={styles.textInput}
+      />
       <Text style={styles.status}>{status}</Text>
       <Button title="Login" onPress={() => handleLogin()} />
     </View>
