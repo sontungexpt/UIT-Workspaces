@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Product from '../components/Product';
-import { Pressable, StyleSheet, Button, View, ScrollView } from 'react-native';
+import { Pressable, StyleSheet, Button, View, ScrollView, FlatList } from 'react-native';
 
 function LoadProducts(callback: any): Promise<any> {
   return fetch('https://testnets-api.opensea.io/api/v1/assets')
@@ -57,10 +57,8 @@ const styles = StyleSheet.create({
   },
   productsContainer: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
-    flexWrap: 'wrap',
+
     paddingBottom: 0,
   },
   button: {
